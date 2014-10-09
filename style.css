@@ -1,0 +1,19 @@
+h1 {
+	font-family: BellBottom;
+	text-align: center;
+	font-size: 80px;
+	color: rgb(246,90,91);
+}
+body {
+	background-color: rgb(255,214,43) 
+}
+.board {
+	margin-left: 35%;
+}
+.square{
+    border: 3px solid rgb(246,90,91);
+    display: table-cell;
+    max-width: 100%
+	height: auto;
+	width: auto;
+}
