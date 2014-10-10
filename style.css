@@ -28,6 +28,24 @@ body {
     border: 3px solid rgb(246,90,91);
 }
 
+.notification {
+    font-family: BellBottom;
+    text-align: center;
+    float: left;
+    margin-right: 26%;
+    font-size: 55px;
+    color: rgb(225,0,91);
+    position: absolute;
+    left: 347px;
+    top: 220px;
+}
+
+.button {
+    float: right;
+    margin-right: 260px;
+    
+}
+
 img {
     height: 150px;
     width: 150px;

@@ -2,7 +2,7 @@
 <html ng-app="TTTApp">
 <head>
     <title>A Very Brady Tic Tac Toe Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">	
+    <link rel="stylesheet" type="text/css" href="style.css">    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <script src="main.js"></script>
 </head>
@@ -11,7 +11,8 @@
     <h1>A Very Brady <br>Tic Tac Toe Game</h1>
 
     <div ng-controller="TTTController">
-        
+        <button class="button" ng-click="testJS()">Play Again</button>
+        <!-- This is the board -->
         <div class="theBox" >
             <div ng-repeat="currentCell in cellList">
                 <div class="allCellsAlways test{{currentCell.num}}"  ng-click="playerPicks(currentCell)"
@@ -22,6 +23,7 @@
                 <!-- Cell Contents: {{currentCell.status}} -->
                 </div>
             </div>
+            <div x-ng-bind="notification" class="notification"></div>
         </div>
     <br>
    
