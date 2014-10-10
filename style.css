@@ -1,24 +1,80 @@
 h1 {
-	font-family: BellBottom;
-	text-align: center;
-	font-size: 80px;
-	color: rgb(246,90,91);
+    font-family: BellBottom;
+    text-align: center;
+    font-size: 80px;
+    color: rgb(246,90,91);
+    margin-bottom: 50px;
 }
+
 body {
-	background-color: rgb(255,214,43) 
+    background-color: rgb(255,214,43)    
 }
-.board {
-	width: 100%;
-	height: 100%;
 
+.theBox {
+	width: 50%;
+	max-height: 679px;
+    border-style: 2px solid;
+    border-color: rgb(246,90,91);
+    margin-left: 30%;
 }
-.square{
-	width: 130px;
-	height: 130px;
+
+.allCellsAlways {
+    width: 142px;
+	height: 142px;
+    display: inline-block;  
+    float: left;
+    margin: 0px ;
+    padding: 0px ;
     border: 3px solid rgb(246,90,91);
-    display: table-cell;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 4px;
+}
 
+img {
+    height: 150px;
+    width: 150px;
+}
+
+.test1 {
+    background-image: url(marcia_new.png);
+}
+
+.test2 {
+    background-image: url(carol_new.png);
+}
+
+.test3 {
+    background-image: url(greg_new.png);
+}
+
+.test4 {
+    background-image: url(jan_new.png);
+}
+
+.test5 {
+    background-image: url(alice_new.png);
+}
+
+.test6 {
+    background-image: url(peter_new.png);
+}
+
+.test7 {
+    background-image: url(cindy_new.png);
+}
+
+.test8 {
+    background-image: url(mike_new.png);
+}
+
+.test9 {
+    background-image: url(bobby_new.png);
+}
+
+
+.xclass {
+	background-image: url(http://res.cloudinary.com/keep/image/fetch/t_post_small3/http://c389604.r4.cf1.rackcdn.com/88cf49009058e3bfa986e26c50b5758d.jpg);
+}
+
+.oclass {
+    background-color: white;
+	background-image: url(http://www.sportsoutletinc.com/uploads/3/1/2/9/3129502/2224755.png?142);
 }

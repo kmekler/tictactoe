@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TTTApp">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <script src="main.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>A Very Brady Tic Tac Toe Game</title>
+    <title>A Very Brady Tic Tac Toe Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">	
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="main.js"></script>
 </head>
-<body ng-app="ticTacToe">
-	<h1>A Very Brady Tic Tac Toe Game</h1>
-  <div class="board" ng-controller="ticTacController" align="center">
-    <div>
-      <div class="square" ng-click=><img class=“autoResizeImage” src="marcia_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="carol_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="greg_new.png"></div>
-    </div>  
-    <div>
-      <div class="square"><img class=“autoResizeImage” src="jan_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="alice_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="peter_new.png"></div> 
-    </div>
-    <div>
-      <div class="square"><img class=“autoResizeImage” src="cindy_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="mike_new.png"></div>
-      <div class="square"><img class=“autoResizeImage” src="bobby_new.png"></div>
-    </div>   
-  </div>
+<body>
 
+    <h1>A Very Brady <br>Tic Tac Toe Game</h1>
+
+    <div ng-controller="TTTController">
+        
+        <div class="theBox" >
+            <div ng-repeat="currentCell in cellList">
+                <div class="allCellsAlways test{{currentCell.num}}"  ng-click="playerPicks(currentCell)"
+                ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status =='O'}">
+
+                <!-- <img src="{{currentCell.image[0].src}}">  -->
+
+                <!-- Cell Contents: {{currentCell.status}} -->
+                </div>
+            </div>
+        </div>
+    <br>
+   
+    <p></p>
+    </div>
 </body>
 </html>
