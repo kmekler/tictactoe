@@ -16,6 +16,7 @@ body {
     border-style: 2px solid;
     border-color: rgb(246,90,91);
     margin-left: 30%;
+    margin-top: 8%;
 }
 
 .allCellsAlways {
@@ -29,15 +30,14 @@ body {
 }
 
 .notification {
-    font-family: BellBottom;
+    font-family: 'PT Sans Narrow', sans-serif;
     text-align: center;
-    float: left;
-    margin-right: 26%;
-    font-size: 55px;
+    font-size: 45px;
     color: rgb(225,0,91);
     position: absolute;
-    left: 347px;
-    top: 220px;
+    top: 235px;
+    right: 460px;
+
 }
 
 .button {
@@ -93,6 +93,6 @@ img {
 }
 
 .oclass {
-    background-color: white;
+    
 	background-image: url(http://www.sportsoutletinc.com/uploads/3/1/2/9/3129502/2224755.png?142);
 }

@@ -135,7 +135,10 @@ $scope.testJS = function(){
 
       $scope.notification = "You win! GROOVY!!";
   }
- 
+ if ($scope.movecounter == 9) {
+
+      $scope.notification = "Bradys never pout.";
+ }
   
 
 };
