@@ -7,7 +7,7 @@ h1 {
 }
 
 body {
-    background-color: rgb(255,214,43)    
+    background-color: rgb(255,214,43) 
 }
 
 .theBox {
@@ -31,12 +31,13 @@ body {
 
 .notification {
     font-family: 'PT Sans Narrow', sans-serif;
+    font-style: bold;
     text-align: center;
-    font-size: 45px;
-    color: rgb(225,0,91);
+    font-size: 25px;
+    color: rgb(212,9,122) ;
     position: absolute;
     top: 235px;
-    right: 460px;
+    right: 240px;
 
 }
 
