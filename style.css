@@ -17,6 +17,7 @@ body {
     border-color: rgb(246,90,91);
     margin-left: 30%;
     margin-top: 8%;
+    
 }
 
 .allCellsAlways {
@@ -43,7 +44,15 @@ body {
 
 .button {
     float: right;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
     margin-right: 260px;
+    margin-top: 200px;
+    color: rgb(212,9,122);
+    background-color: rgb(244,172,173);
+    border: 5px solid rgb(246,90,91);
+    border-radius: 50px;
+    
     
 }
 
