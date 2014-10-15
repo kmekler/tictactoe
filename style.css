@@ -2,12 +2,13 @@ h1 {
     font-family: BellBottom;
     text-align: center;
     font-size: 80px;
-    color: rgb(246,90,91);
+    color: rgb(34,171,238);
+    text-shadow: 2px 2px rgb(0,118,206);
     margin-bottom: 50px;
 }
 
 body {
-    background-color: rgb(255,214,43) 
+    background-color: rgb(188,249,102) ; 
 }
 
 
@@ -15,7 +16,7 @@ body {
 	width: 470px;
 	max-height: 679px;
     border-style: 2px solid;
-    border-color: rgb(246,90,91);
+    border-color: rgb(255,0,103);
     margin-left: 30%;
     margin-top: 5%;
 
@@ -27,7 +28,7 @@ body {
     float: left;
     margin: 0px ;
     padding: 0px ;
-    border: 3px solid rgb(246,90,91);
+    border: 3px solid rgb(255,0,103);
 }
 
 .notification {
@@ -35,10 +36,10 @@ body {
     font-style: bold;
     text-align: center;
     font-size: 27px;
-    color: rgb(148,16,17);
+    color: rgb(195,10,75) ;
     position: absolute;
     top: 210px;
-    right: 230px;
+    right: 180px;
 
 }
 
@@ -47,14 +48,13 @@ body {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 20px;
     color: white;
-    background-color: rgb(246,90,91);
-    border: 5px solid rgb(148,16,17);
+    background-color: rgb(251,122,168) ;
+    border: 5px solid rgb(255,0,103);
     border-radius: 50px;
     bottom: 5px;
     margin-right: 48%;
     padding: 7px;
-
-    
+    margin-bottom: 30px;   
     
 }
 

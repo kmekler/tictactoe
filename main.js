@@ -1,7 +1,8 @@
-var TTTApp = angular.module('TTTApp', []);
+var TTTApp = angular.module('TTTApp', ['firebase']);
 
-TTTApp.controller('TTTController', function ($scope) {
+TTTApp.controller('TTTController', function($scope,$firebase){
 
+var myFirebaseRef = new Firebase("https://bradytictactoe.firebaseio.com") ;
 
 $scope.resetButton = function(){
   $scope.cellList = [ 
