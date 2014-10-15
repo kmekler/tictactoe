@@ -1,6 +1,8 @@
 var TTTApp = angular.module('TTTApp', []);
 
 TTTApp.controller('TTTController', function ($scope) {
+
+
 $scope.resetButton = function(){
   $scope.cellList = [ 
 
@@ -46,98 +48,98 @@ $scope.resetButton = function(){
       $scope.cellList[1].status == "X" &&
       $scope.cellList[2].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
 }
   if ($scope.cellList[3].status == "X" &&
       $scope.cellList[4].status == "X" &&
       $scope.cellList[5].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!"; 
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!"; 
       }
   if ($scope.cellList[6].status == "X" &&
       $scope.cellList[7].status == "X" &&
       $scope.cellList[8].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   } 
   if ($scope.cellList[0].status == "X" &&
       $scope.cellList[3].status == "X" &&
       $scope.cellList[6].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
       }   
   if ($scope.cellList[1].status == "X" &&
       $scope.cellList[4].status == "X" &&
       $scope.cellList[7].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }   
   if ($scope.cellList[2].status == "X" &&
       $scope.cellList[5].status == "X" &&
       $scope.cellList[8].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
   if ($scope.cellList[0].status == "X" &&
       $scope.cellList[4].status == "X" &&
       $scope.cellList[8].status == "X") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
   if ($scope.cellList[2].status == "X" &&
       $scope.cellList[4].status == "X" &&
       $scope.cellList[6].status == "X") {
 
-      $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+      $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
   // for o
     if ($scope.cellList[0].status == "O" &&
       $scope.cellList[1].status == "O" &&
       $scope.cellList[2].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
 }
   if ($scope.cellList[3].status == "O" &&
       $scope.cellList[4].status == "O" &&
       $scope.cellList[5].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!"; 
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!"; 
       }
   if ($scope.cellList[6].status == "O" &&
       $scope.cellList[7].status == "O" &&
       $scope.cellList[8].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   } 
   if ($scope.cellList[0].status == "O" &&
       $scope.cellList[3].status == "O" &&
       $scope.cellList[6].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
       }   
   if ($scope.cellList[1].status == "O" &&
       $scope.cellList[4].status == "O" &&
       $scope.cellList[7].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }   
   if ($scope.cellList[2].status == "O" &&
       $scope.cellList[5].status == "O" &&
       $scope.cellList[8].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
   if ($scope.cellList[0].status == "O" &&
       $scope.cellList[4].status == "O" &&
       $scope.cellList[8].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
   if ($scope.cellList[2].status == "O" &&
       $scope.cellList[4].status == "O" &&
       $scope.cellList[6].status == "O") {
 
-        $scope.notification = "Put on your Sunday best kids. We're going to Sears to celebrate this triumphant win!";
+        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
 
   // cat's game 

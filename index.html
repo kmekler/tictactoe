@@ -12,9 +12,9 @@
     <h1>A Very Brady <br>Tic Tac Toe Game</h1>
 
     <div x-ng-controller="TTTController">
-        <button class="button" x-ng-click="resetButton()">Play Again</button>
+
         <!-- This is the board -->
-        <div class="theBox" >
+        <div class="theBox">
             <div x-ng-repeat="currentCell in cellList">
                 <div class="allCellsAlways test{{currentCell.num}}"  x-ng-click="playerPicks(currentCell)"
                 x-ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status =='O'}">
@@ -26,6 +26,9 @@
             </div>
             <div x-ng-bind="notification" class="notification"> </div>
         </div>
+        <div class="clearFix"></div>
+        <button class="button" x-ng-click="resetButton()">Play Again</button>
+
     <br>
    
     <p></p>
