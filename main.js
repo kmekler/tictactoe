@@ -4,6 +4,8 @@ TTTApp.controller('TTTController', function($scope,$firebase){
 
 var myFirebaseRef = new Firebase("https://bradytictactoe.firebaseio.com") ;
 
+$scope.cellList = $firebase(myFirebaseRef);
+
 $scope.resetButton = function(){
   $scope.cellList = [ 
 
@@ -19,7 +21,7 @@ $scope.resetButton = function(){
   ]  ;
 
   // resets moves
-  $scope.movecounter = 0 ;
+  $scope.movecounter = 0;
   // resets notification 
   $scope.notification = "";
 
@@ -31,126 +33,79 @@ $scope.resetButton = function(){
       return;
     }    
   else {  
-    $scope.movecounter = $scope.movecounter + 1 ;
+    $scope.movecounter ++ ;
     console.log("Cell was: " + thisCell.status) ;
     if (($scope.movecounter % 2) == 1) {
-      thisCell.status = "X" ;  
-      thisCell.clickNumber = thisCell.clickNumber + 1;
+      thisCell.status = "X" ; 
+      determineWin("X"); 
     } else {
       thisCell.status = "O" ;
-      thisCell.clickNumber= thisCell.clickNumber +1;
-      console.log("Cell is now: " + thisCell.status) ;
+      determineWin("O"); 
     }
+    thisCell.clickNumber ++;
+    console.log("Cell is now: " + thisCell.status) ;
   } 
-
+};
   // WINS!
-  // for x
-  if ($scope.cellList[0].status == "X" &&
-      $scope.cellList[1].status == "X" &&
-      $scope.cellList[2].status == "X") {
+function determineWin(xo){
+  if ($scope.moveCounter <= 4) {
+    return;
+  } 
+  if ($scope.cellList[0].status == xo &&
+      $scope.cellList[1].status == xo &&
+      $scope.cellList[2].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-}
-  if ($scope.cellList[3].status == "X" &&
-      $scope.cellList[4].status == "X" &&
-      $scope.cellList[5].status == "X") {
+  }
+  if ($scope.cellList[3].status == xo &&
+      $scope.cellList[4].status == xo &&
+      $scope.cellList[5].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!"; 
       }
-  if ($scope.cellList[6].status == "X" &&
-      $scope.cellList[7].status == "X" &&
-      $scope.cellList[8].status == "X") {
+  if ($scope.cellList[6].status == xo &&
+      $scope.cellList[7].status == xo &&
+      $scope.cellList[8].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   } 
-  if ($scope.cellList[0].status == "X" &&
-      $scope.cellList[3].status == "X" &&
-      $scope.cellList[6].status == "X") {
+  if ($scope.cellList[0].status == xo &&
+      $scope.cellList[3].status == xo &&
+      $scope.cellList[6].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
       }   
-  if ($scope.cellList[1].status == "X" &&
-      $scope.cellList[4].status == "X" &&
-      $scope.cellList[7].status == "X") {
+  if ($scope.cellList[1].status == xo &&
+      $scope.cellList[4].status == xo &&
+      $scope.cellList[7].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }   
-  if ($scope.cellList[2].status == "X" &&
-      $scope.cellList[5].status == "X" &&
-      $scope.cellList[8].status == "X") {
+  if ($scope.cellList[2].status == xo &&
+      $scope.cellList[5].status == xo &&
+      $scope.cellList[8].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  if ($scope.cellList[0].status == "X" &&
-      $scope.cellList[4].status == "X" &&
-      $scope.cellList[8].status == "X") {
+  if ($scope.cellList[0].status == xo &&
+      $scope.cellList[4].status == xo &&
+      $scope.cellList[8].status == xo) {
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  if ($scope.cellList[2].status == "X" &&
-      $scope.cellList[4].status == "X" &&
-      $scope.cellList[6].status == "X") {
+  if ($scope.cellList[2].status == xo &&
+      $scope.cellList[4].status == xo &&
+      $scope.cellList[6].status == xo) {
 
       $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  // for o
-    if ($scope.cellList[0].status == "O" &&
-      $scope.cellList[1].status == "O" &&
-      $scope.cellList[2].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-}
-  if ($scope.cellList[3].status == "O" &&
-      $scope.cellList[4].status == "O" &&
-      $scope.cellList[5].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!"; 
-      }
-  if ($scope.cellList[6].status == "O" &&
-      $scope.cellList[7].status == "O" &&
-      $scope.cellList[8].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-  } 
-  if ($scope.cellList[0].status == "O" &&
-      $scope.cellList[3].status == "O" &&
-      $scope.cellList[6].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-      }   
-  if ($scope.cellList[1].status == "O" &&
-      $scope.cellList[4].status == "O" &&
-      $scope.cellList[7].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-  }   
-  if ($scope.cellList[2].status == "O" &&
-      $scope.cellList[5].status == "O" &&
-      $scope.cellList[8].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-  }
-  if ($scope.cellList[0].status == "O" &&
-      $scope.cellList[4].status == "O" &&
-      $scope.cellList[8].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-  }
-  if ($scope.cellList[2].status == "O" &&
-      $scope.cellList[4].status == "O" &&
-      $scope.cellList[6].status == "O") {
-
-        $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
-  }
-
-  // cat's game 
-
- if ($scope.movecounter == 9) {
-
+  // this will establish a cat's game 
+ if ($scope.movecounter == 9 && $scope.notification == "") {
       $scope.notification = "Aw nuts. You tied!!! Oh well, us Bradys have to stick together, or we will fall apart.";    
- }
-  
+  }
 
 };
+
+
 $scope.resetButton();
 });
