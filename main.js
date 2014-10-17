@@ -1,9 +1,11 @@
 var TTTApp = angular.module('TTTApp', ['firebase']);
-
+var FB;
 TTTApp.controller('TTTController', function($scope,$firebase) {
-
+var ticTacRef = new Firebase("https://bradytictactoe.firebaseio.com");
 $scope.remoteGameContainer = 
-$firebase(new Firebase("https://bradytictactoe.firebaseio.com")) ;
+$firebase(ticTacRef) ;
+  FB=($scope.remoteGameContainer);
+
 
 // Variables and objects:
   $scope.cellList = [ 
@@ -24,18 +26,27 @@ $firebase(new Firebase("https://bradytictactoe.firebaseio.com")) ;
 
   // resets notification 
   $scope.notification = "";
-
-
-// Special Sauce
-
-$scope.gameContainer = {
-  cellListArray: $scope.cellList, 
-  moveCount: $scope.moveCounter 
-};
-
-// Angular stuff here 
-
-$scope.remoteGameContainer.$bind($scope, "gameContainer");
+  // This goes through firebase, not angularfire
+  // It snags the current contents of everything in firebase 
+  ticTacRef.once("value", function(data){
+    console.log(data.val());
+    // Let's find out how many players are on this board!
+      console.log($scope.imPlayer);
+      // If there are no players or we should be resetting, set to imPlayer0
+    if(!data.val() || data.val().numPlayers == 2){
+      $scope.imPlayer = 0;
+    } 
+    else {
+      $scope.imPlayer = 1;
+    }
+    $scope.gameContainer = {
+      cellListArray: $scope.cellList, 
+      moveCount: $scope.moveCounter, 
+      numPlayers: $scope.imPlayer +1
+    };
+    $scope.remoteGameContainer.$bind($scope, "gameContainer");
+    $scope.resetButton();
+  });
 
 $scope.$watch('gameContainer', function(){
   console.log('gameContainer changed!');
@@ -44,7 +55,7 @@ $scope.$watch('gameContainer', function(){
 // Functions start here 
 // This says that once a value is issued the cell cannot be clicked again
   $scope.playerPicks = function(thisCell){
-    if (thisCell.status == "X" || thisCell.status == "O"){
+    if (thisCell.status == "X" || thisCell.status == "O" || $scope.imPlayer != ($scope.gameContainer.moveCount % 2)){
       return;
     }    
   else {  
@@ -66,51 +77,51 @@ function determineWin(xo){
   if ($scope.gameContainer.moveCount <= 4){
     return;
   } 
-  if ($scope.gameContainer.cellListArray[0].status == xo &&
-      $scope.gameContainer.cellListArray[1].status == xo &&
-      $scope.gameContainer.cellListArray[2].status == xo){
+  if ($scope.gameContainer.cellListArray["0"].status == xo &&
+      $scope.gameContainer.cellListArray["1"].status == xo &&
+      $scope.gameContainer.cellListArray["2"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  if ($scope.gameContainer.cellListArray[3].status == xo &&
-      $scope.gameContainer.cellListArray[4].status == xo &&
-      $scope.gameContainer.cellListArray[5].status == xo){
+  if ($scope.gameContainer.cellListArray["3"].status == xo &&
+      $scope.gameContainer.cellListArray["4"].status == xo &&
+      $scope.gameContainer.cellListArray["5"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!"; 
       }
-  if ($scope.gameContainer.cellListArray[6].status == xo &&
-      $scope.gameContainer.cellListArray[7].status == xo &&
-      $scope.gameContainer.cellListArray[8].status == xo){
+  if ($scope.gameContainer.cellListArray["6"].status == xo &&
+      $scope.gameContainer.cellListArray["7"].status == xo &&
+      $scope.gameContainer.cellListArray["8"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   } 
-  if ($scope.gameContainer.cellListArray[0].status == xo &&
-      $scope.gameContainer.cellListArray[3].status == xo &&
-      $scope.gameContainer.cellListArray[6].status == xo){
+  if ($scope.gameContainer.cellListArray["0"].status == xo &&
+      $scope.gameContainer.cellListArray["3"].status == xo &&
+      $scope.gameContainer.cellListArray["6"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
       }   
-  if ($scope.gameContainer.cellListArray[1].status == xo &&
-      $scope.gameContainer.cellListArray[4].status == xo &&
-      $scope.gameContainer.cellListArray[7].status == xo){
+  if ($scope.gameContainer.cellListArray["1"].status == xo &&
+      $scope.gameContainer.cellListArray["4"].status == xo &&
+      $scope.gameContainer.cellListArray["7"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }   
-  if ($scope.gameContainer.cellListArray[2].status == xo &&
-      $scope.gameContainer.cellListArray[5].status == xo &&
-      $scope.gameContainer.cellListArray[8].status == xo){
+  if ($scope.gameContainer.cellListArray["2"].status == xo &&
+      $scope.gameContainer.cellListArray["5"].status == xo &&
+      $scope.gameContainer.cellListArray["8"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  if ($scope.gameContainer.cellListArray[0].status == xo &&
-      $scope.gameContainer.cellListArray[4].status == xo &&
-      $scope.gameContainer.cellListArray[8].status == xo){
+  if ($scope.gameContainer.cellListArray["0"].status == xo &&
+      $scope.gameContainer.cellListArray["4"].status == xo &&
+      $scope.gameContainer.cellListArray["8"].status == xo){
 
         $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
-  if ($scope.gameContainer.cellListArray[2].status == xo &&
-      $scope.gameContainer.cellListArray[4].status == xo &&
-      $scope.gameContainer.cellListArray[6].status == xo){
+  if ($scope.gameContainer.cellListArray["2"].status == xo &&
+      $scope.gameContainer.cellListArray["4"].status == xo &&
+      $scope.gameContainer.cellListArray["6"].status == xo){
 
       $scope.notification = "Put on your Sunday best, kids. We're going to Sears to celebrate this triumphant win!";
   }
@@ -141,7 +152,5 @@ $scope.resetButton = function(){
   $scope.notification = "";
 
 };
-
-  $scope.resetButton();
 
 });

@@ -8,7 +8,7 @@
     <!-- firebase -->
     <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- angular fire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
             <div x-ng-bind="notification" class="notification"> </div>
         </div>
         <div class="clearFix"></div>
-        <button class="button" x-ng-click="resetButton()">Play Again</button>
+        <button class="button" x-ng-click="resetButton()">Play Again {{imPlayer}}</button>
 
     <br>
    
