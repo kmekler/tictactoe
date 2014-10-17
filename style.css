@@ -32,6 +32,10 @@ body {
     border: 3px solid rgb(255,0,103);
 }
 
+.allCellsAlways:hover {
+    opacity: 0.5;
+}
+
 .notification {
     font-family: 'PT Sans Narrow', sans-serif, bold;
     font-style: bold;

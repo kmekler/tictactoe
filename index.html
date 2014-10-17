@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <!-- firebase -->
-    <script src="https://cdn.firebase.com/js/client/1.1.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- angular fire -->
     <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
     <script src="main.js"></script>
@@ -15,11 +15,11 @@
 
     <h1>A Very Brady <br>Tic Tac Toe Game</h1>
 
-    <div x-ng-controller="TTTController">
+    <div x-ng-controller="TTTController" ng-model="gameContainer">
 
         <!-- This is the board -->
         <div class="theBox">
-            <div x-ng-repeat="currentCell in cellList">
+            <div x-ng-repeat="currentCell in gameContainer.cellListArray">
                 <div class="allCellsAlways test{{currentCell.num}}"  x-ng-click="playerPicks(currentCell)"
                 x-ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status =='O'}">
 
