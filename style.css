@@ -9,6 +9,7 @@ h1 {
     color: rgb(34,171,238);
     text-shadow: 2px 2px rgb(0,118,206);
     margin-bottom: 50px;
+    margin-left: 2%;
 }
 
 body {
@@ -21,8 +22,8 @@ body {
 	max-height: 679px;
     border-style: 2px solid;
     border-color: rgb(255,0,103);
-    float: right;
-    margin-right: 30%;
+    float: left;
+    margin-left: 29%;
     margin-top: 5px;
 
     
@@ -47,8 +48,10 @@ body {
     font-size: 27px;
     color: rgb(195,10,75) ;
     position: absolute;
+    margin: 0 auto;
+    left: 200px;
     top: 210px;
-    right: 210px;
+   
 }
 
 .button {
@@ -60,7 +63,8 @@ body {
     border: 5px solid rgb(255,0,103);
     border-radius: 50px;
     bottom: 5px;
-    margin-right: 48%;
+    float: left; 
+    margin-left: 44%;
     padding: 5px;
     margin-bottom: 30px;   
     

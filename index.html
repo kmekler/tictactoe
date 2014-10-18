@@ -19,16 +19,17 @@
 
         <!-- This is the board -->
         <div class="theBox">
-            <div x-ng-repeat="currentCell in gameContainer.cellListArray">
-                <div class="allCellsAlways test{{currentCell.num}}"  x-ng-click="playerPicks(currentCell)"
-                x-ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status =='O'}">
+            <div x-ng-repeat="cell in gameContainer.cellListArray">
+                <div class="allCellsAlways test{{cell.num}}"  x-ng-click="playerPicks(cell)"
+                x-ng-class="{xclass: cell.status=='Player 0', oclass: cell.status =='Player 1'}">
 
-                <!-- <img src="{{currentCell.image[0].src}}">  -->
-
-                <!-- Cell Contents: {{currentCell.status}} -->
+                <!-- Cell Contents: {{cell.status}} -->
                 </div>
             </div>
-            <div x-ng-bind="notification" class="notification"> </div>
+            <!-- <div x-ng-show="gameContainer.gameState == 'playing'" class="notification">Game in progress.</div> -->
+            <div x-ng-show="gameContainer.gameState == 'player 0 won'" class="notification">Put on your Sunday best, kids. We're going to Sears to celebrate Player 0's triumphant win!</div>
+            <div x-ng-show="gameContainer.gameState == 'player 1 won'" class="notification">Put on your Sunday best, kids. We're going to Sears to celebrate Player 1's triumphant win!</div>
+            <div x-ng-show="gameContainer.gameState == 'tied'" class="notification">Aw, nuts, you tied! Oh well, us Bradys have to stick together or else we'll fall apart!</div>
         </div>
         <div class="clearFix"></div>
         <button class="button" x-ng-click="resetButton()">Play Again {{imPlayer}}</button>
