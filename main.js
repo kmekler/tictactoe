@@ -134,7 +134,7 @@ $scope.resetButton = function(){
   $scope.gameContainer.moveCount = 0;
 
   // resets notification 
-  $scope.gameContainer.notification = "";
+  $scope.gameContainer.gameState = 0;
 
 };
 
